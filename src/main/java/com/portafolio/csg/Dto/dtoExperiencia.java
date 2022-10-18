@@ -1,4 +1,3 @@
-
 package com.portafolio.csg.Dto;
 
 import javax.validation.constraints.NotBlank;
