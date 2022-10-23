@@ -1,43 +1,25 @@
-package com.portafolio.csg.Entity;
+package com.portafolio.csg.Dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
 
-
-@Entity
-public class Persona {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    
-    @NotNull
-    @Size(min=1, max=50, message="no cumple con la longitud")
+public class dtoPersona {
+    @NotBlank
     private String nombre;
-    
-    @NotNull
-    @Size(min=1, max=50, message="no cumple con la longitud")
+    @NotBlank
     private String apellido;
-    
-    @NotNull
+    @NotBlank
     private String descripcion;
-    
-    
+    @NotBlank
     private String contacto;
-        
-     
+    @NotBlank
     private String img;
     
-    
-    //constructor
+    //Construcctor
 
-    public Persona() {
+    public dtoPersona() {
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String contacto, String img) {
+    public dtoPersona(String nombre, String apellido, String descripcion, String contacto, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
@@ -45,15 +27,7 @@ public class Persona {
         this.img = img;
     }
     
-    //Getters y Setters
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    //Getter y Setters
 
     public String getNombre() {
         return nombre;
@@ -96,6 +70,5 @@ public class Persona {
     }
     
     
-    
-    
+
 }
